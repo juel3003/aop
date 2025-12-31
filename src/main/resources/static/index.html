@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NACHA File Validator</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .result { margin-top: 20px; white-space: pre-wrap; background: #f0f0f0; padding: 10px; border-radius: 5px; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>NACHA File Validator</h1>
+    <form id="uploadForm">
+        <label for="file">Select NACHA file:</label>
+        <input type="file" id="file" name="file" required>
+        <br><br>
+        <button type="submit">Validate</button>
+    </form>
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    document.getElementById('uploadForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        const fileField = document.querySelector('input[type="file"]');
+        formData.append('file', fileField.files[0]);
+
+        const resultDiv = document.getElementById('result');
+        resultDiv.textContent = "Validating...";
+        resultDiv.className = "result";
+
+        fetch('/api/nacha/validate', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.valid) {
+                resultDiv.textContent = "File is VALID.\n" + data.message;
+                resultDiv.classList.add("success");
+            } else {
+                resultDiv.textContent = "File is INVALID.\n" + data.message + "\nErrors:\n" + data.errors.join("\n");
+                resultDiv.classList.add("error");
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            resultDiv.textContent = "An error occurred while uploading the file.";
+            resultDiv.classList.add("error");
+        });
+    });
+</script>
+</body>
+</html>
