@@ -305,7 +305,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
-            <mainClass>com.optum.aog.Application</mainClass>
+            <mainClass>com.optum.aog.nacha.NachaApplication</mainClass>
             <layout>JAR</layout>
         </configuration>
     </plugin>
