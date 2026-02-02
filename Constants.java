@@ -104,5 +104,8 @@ public class Constants {
     public static final Integer USP_KA_ID = 17;
     public static final Integer SUREST_ID = 18;
     public static final Integer USP_WEST_ID =19;
+    public static final Integer DELIVERY_ID = 20;
+
+    public static final String DELIVERY = "Delivery";
 
 }

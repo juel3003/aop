@@ -54,6 +54,8 @@ public class AOGWordDocUtility {
             aop = USP_NA;
         if (platformId == USP_WEST_ID)
             aop = USP_West;
+        if (platformId == DELIVERY_ID)
+            aop = DELIVERY;
         return aop;
 
     }
