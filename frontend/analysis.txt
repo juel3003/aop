@@ -1,0 +1,17 @@
+Analyzing frontend...
+
+   info • Constructors for public widgets should have a named 'key' parameter • lib/main.dart:8:7 • use_key_in_widget_constructors
+   info • Constructors for public widgets should have a named 'key' parameter • lib/map_screen.dart:9:3 • use_key_in_widget_constructors
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/map_screen.dart:9:3 • prefer_const_constructors_in_immutables
+   info • Invalid use of a private type in a public API • lib/map_screen.dart:12:3 • library_private_types_in_public_api
+   info • Constructors for public widgets should have a named 'key' parameter • lib/menu_screen.dart:4:7 • use_key_in_widget_constructors
+   info • Constructors for public widgets should have a named 'key' parameter • lib/order_screen.dart:11:3 • use_key_in_widget_constructors
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/order_screen.dart:11:3 • prefer_const_constructors_in_immutables
+   info • Invalid use of a private type in a public API • lib/order_screen.dart:14:3 • library_private_types_in_public_api
+   info • Don't use 'BuildContext's across async gaps • lib/order_screen.dart:41:32 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/order_screen.dart:44:30 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/order_screen.dart:46:32 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/order_screen.dart:51:30 • use_build_context_synchronously
+  error • The name 'MyApp' isn't a class • test/widget_test.dart:16:35 • creation_with_non_type
+
+13 issues found. (ran in 5.8s)
